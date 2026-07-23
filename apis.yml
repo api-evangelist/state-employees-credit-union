@@ -30,9 +30,12 @@ tags:
 - Data Aggregation
 created: '2026-07-23'
 modified: '2026-07-23'
+enriched: '2026-07-23'
 specificationVersion: '0.19'
 apis: []
 common:
+- type: DomainSecurity
+  url: security/state-employees-credit-union-domain-security.yml
 - type: Website
   url: https://www.ncsecu.org/
 - type: Documentation
