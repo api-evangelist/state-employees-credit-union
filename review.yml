@@ -1,0 +1,86 @@
+aid: state-employees-credit-union
+name: State Employees' Credit Union
+review:
+  question: Does State Employees' Credit Union (NCSECU) expose a public first-party developer API, downloadable API specifications, or a documented FDX / CFPB 1033 data-access surface?
+  answer: false
+  date: '2026-07-23'
+  reviewer: API Evangelist
+findings:
+  summary: |
+    State Employees' Credit Union publishes no public first-party developer API
+    and no developer portal. Direct probes returned: developer.ncsecu.org — no
+    DNS/host (curl exit, HTTP 000); developers.ncsecu.org — no host (HTTP 000);
+    api.ncsecu.org — HTTP 403 (a gated, undocumented backend consistent with a
+    mobile/web app origin, not a documented public product). The public site
+    ncsecu.org (HTTP 200) contains no "Developers" or "API" section and offers no
+    downloadable OpenAPI/Swagger definition.
+
+    SECU is a state-chartered, member-owned credit union (~$56B assets, ~2.9M
+    members, 275 NC branches; NCUA-insured, NMLS #430055) — the classic US
+    credit-union profile with no first-party API program. Its consumer digital
+    banking (Member Access) supports connecting EXTERNAL accounts for a
+    "360-degree" aggregated view, meaning SECU consumes aggregated data as a
+    recipient; outbound consumer-permissioned data sharing follows the standard,
+    non-mandated US aggregator pattern (Plaid/MX/Finicity/Akoya class providers)
+    rather than a documented first-party data-access API.
+
+    US open finance is voluntary and fragmented: there is no mandated open-banking
+    contract. No FDX-conformant public data-access endpoint and no stated CFPB
+    Section 1033 posture are published by SECU as of the review date. A claim that
+    NCSECU is an FDX member appears only in a third-party member-support forum
+    thread and could not be corroborated by an authoritative SECU or
+    FinancialDataExchange.org source, so it is NOT recorded as fact.
+  posture:
+    firstPartyDeveloperPortal: false
+    developerPortalURL: ''
+    portalConfirmed200: false
+    downloadableOpenAPI: false
+    specProvenance: none
+    authModel: none-documented
+    fdxParticipant: unconfirmed
+    fdxEvidence: Mentioned only in a third-party member-support forum thread; no authoritative confirmation.
+    cfpb1033Posture: none-published
+    aggregatorAccess: true
+    aggregatorNote: >-
+      Member Access supports connecting external accounts for aggregation (SECU as
+      data recipient); consumer-permissioned outbound sharing handled via
+      third-party aggregators, not a documented first-party API.
+  probes:
+  - url: https://developer.ncsecu.org
+    status: '000'
+    note: No DNS/host resolves.
+  - url: https://developers.ncsecu.org
+    status: '000'
+    note: No DNS/host resolves.
+  - url: https://api.ncsecu.org
+    status: '403'
+    note: Gated, undocumented backend origin. Not a public documented API product.
+  - url: https://www.ncsecu.org/
+    status: '200'
+    note: Public marketing/banking site. No Developers/API section, no OpenAPI.
+  transports:
+  - protocol: REST
+    scheme: https
+    documented: false
+    note: No public REST API documentation is published.
+  - protocol: FDX
+    documented: false
+    note: No public FDX-conformant data-access endpoint is documented.
+sources:
+- url: https://www.ncsecu.org/about-us
+  type: Documentation
+  note: Institution identity facts (founding 1937, ~$56B assets, ~2.9M members, 275 branches, NCUA-insured, NMLS #430055). No API mention.
+- url: https://www.ncsecu.org/services/online
+  type: Documentation
+  note: Digital banking / Member Access. Supports connecting external accounts for aggregation; no developer API, Plaid/Finicity/MX, or open-banking protocol named.
+- url: https://en.wikipedia.org/wiki/State_Employees_Credit_Union
+  type: Reference
+  note: State-chartered credit union, Raleigh NC; second-largest US credit union.
+actions:
+  apisYmlUpdated: true
+  openapiHarvested: false
+  reason: |
+    No public first-party API surface, no downloadable specification, and no
+    documented FDX/1033 data-access endpoint exist to harvest. The correct,
+    non-fabricated result is an identity-only record with an empty apis[] block
+    and an honest "no public API — aggregator-only" posture.

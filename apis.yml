@@ -1,0 +1,48 @@
+aid: state-employees-credit-union
+url: https://raw.githubusercontent.com/api-evangelist/state-employees-credit-union/refs/heads/main/apis.yml
+name: State Employees' Credit Union
+kind: company
+description: >-
+  State Employees' Credit Union (SECU / NCSECU) is a member-owned, not-for-profit
+  financial cooperative headquartered in Raleigh, North Carolina. Founded in 1937
+  with 17 members and $437 in deposits, it is a state-chartered credit union
+  regulated by the Credit Union Division of the North Carolina Department of
+  Commerce and federally insured by the NCUA (NMLS #430055). SECU is the
+  second-largest natural-person credit union in the United States by both assets
+  and membership, serving nearly 2.9 million member-owners with roughly $56 billion
+  in assets across 275 branches in all 100 North Carolina counties. Membership is
+  primarily limited to North Carolina state employees and their families. On the
+  open-finance front, SECU operates no public first-party developer portal and
+  publishes no downloadable OpenAPI/Swagger specifications; its consumer digital
+  banking (Member Access) supports connecting external accounts for aggregation,
+  and outbound consumer-permissioned data sharing is handled through data
+  aggregators rather than a documented first-party API. No public FDX-conformant
+  data-access endpoint or CFPB Section 1033 data-rights posture is published as of
+  July 2026.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Financial Services
+- Banking
+- Credit Union
+- United States
+- North Carolina
+- Open Finance
+- Data Aggregation
+created: '2026-07-23'
+modified: '2026-07-23'
+specificationVersion: '0.19'
+apis: []
+common:
+- type: Website
+  url: https://www.ncsecu.org/
+- type: Documentation
+  url: https://www.ncsecu.org/about-us
+- type: Documentation
+  url: https://www.ncsecu.org/services/online
+- type: TermsOfService
+  url: https://www.ncsecu.org/pdfs/privacy-and-legal/SECUTermsOfUse.pdf
+- type: PrivacyPolicy
+  url: https://onlineaccess.ncsecu.org/O/SECUContent/PDF/SECUPrivacyNotice_English.pdf
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
