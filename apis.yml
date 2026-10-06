@@ -59,11 +59,13 @@ tags_raw:
 - Open Finance
 - Financial-Services
 created: '2026-07-23'
-modified: '2026-07-23'
+modified: '2026-10-06'
 enriched: '2026-07-23'
 specificationVersion: '0.23'
 apis: []
 common:
+- url: https://www.ncsecu.org/newsroom
+  type: Blog
 - type: DomainSecurity
   url: security/state-employees-credit-union-domain-security.yml
 - type: Website
