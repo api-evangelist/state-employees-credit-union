@@ -17,6 +17,10 @@ checked:
 - https://www.canada.ca/en/financial-consumer-agency.html
 - https://www.consumerfinance.gov/compliance/supervision-examinations/institutions/
 - https://www.nmlsconsumeraccess.org/
+- https://api.fdic.gov/banks/history
+- https://api.fdic.gov/banks/institutions?filters=ACTIVE:1&fields=NAME,WEBADDR,CERT,ASSET,STALP
+- https://www.ncua.gov/files/publications/analysis/call-report-data-2025-06.zip
+- https://www.ncua.gov/files/publications/analysis/federally-insured-credit-union-list-june-2025.zip
 summary: null
 marketplace_apps: []
 edges:
@@ -52,4 +56,37 @@ edges:
     identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
   detected_by: sweep-consumer-lending-licensing.py
   first_seen: '2026-10-21'
+- partner_name: NCUA federally insured credit unions
+  partner: null
+  partner_match: register
+  type: register
+  channel: regulator-register
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.ncua.gov/files/publications/analysis/federally-insured-credit-union-list-june-2025.zip
+  category: US NCUA federally insured credit union charter
+  contract_reference:
+    register: NCUA federally insured credit unions
+    spec_file: null
+    standard: null
+    role: insured-credit-union
+    registrations:
+    - registered_name: STATE EMPLOYEES'
+      register_status: active
+      register_country: US
+      register_id: '66310'
+      matched_domain: ncsecu.org
+      matched_by: domain
+      licences:
+      - NCUA federally insured credit union (charter 66310)
+      evidence_url: https://mapping.ncua.gov/ResearchCreditUnion.aspx
+      state: NC
+      trade_names:
+      - SECU
+    signal_note: 'participation only: a federal deposit-insurance charter on a regulator register; no API conformance
+      is published by this register'
+    detected_by: sweep-us-bank-credit-union-registers.py
+    detected: '2026-10-22'
+  detected_by: sweep-us-bank-credit-union-registers.py
+  first_seen: '2026-10-22'
 templates: []
